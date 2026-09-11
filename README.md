@@ -24,10 +24,13 @@ to be comfortable with basic aircraft sizing, performance, and optimization conc
 and the code is intentionally kept simple enough to read end-to-end, modify, and extend for your
 own experiments (new disciplines, different vehicle configurations, alternative objectives, etc.).
 
-Vehicle sizing and mission assumptions are loosely inspired by NASA's reference UAM concept
+Vehicle sizing and mission assumptions are inspired by NASA's reference UAM concept
 vehicles [[3]](#ref-3):
 
 ![Reference lift+cruise eVTOL concept vehicle](xdsm/evtol_lift+cruise_visual.png)
+
+*Figure 1: Simplified illustration of a lift+cruise eVTOL for UAM, based on NASA's reference
+vehicles [[3]](#ref-3).*
 
 *(vector version: [xdsm/evtol_lift+cruise_visual.pdf](xdsm/evtol_lift%2Bcruise_visual.pdf))*
 
@@ -38,6 +41,9 @@ which disciplines exist, what data they exchange, and how the optimizer, the int
 mass-convergence loop, and the constraints fit together.
 
 ![XDSM diagram of the eVTOL lift+cruise MDO model](xdsm/xdsm_evtol_group.png)
+
+*Figure 2: XDSM of the eVTOL lift+cruise MDO model, showing the optimizer, the coupled
+mass-convergence (MDA) loop, and all downstream disciplines.*
 
 *(vector version: [xdsm/xdsm_evtol_group.pdf](xdsm/xdsm_evtol_group.pdf), source: [xdsm/xdsm.py](xdsm/xdsm.py))*
 
@@ -147,7 +153,6 @@ eVTOLs: A Design Optimization Perspective*.
 
 ## Citing this repository
 
-The underlying eVTOL multidisciplinary design model builds on Janning et al. (2024) [[5]](#ref-5)
 above. If you use this research code, please cite the repository using GitHub's
 **Cite this repository** function and the underlying model paper [[5]](#ref-5). A software DOI
 can be added after archiving a stable release.
