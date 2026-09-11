@@ -25,18 +25,21 @@ and the code is intentionally kept simple enough to read end-to-end, modify, and
 own experiments (new disciplines, different vehicle configurations, alternative objectives, etc.).
 
 Vehicle sizing and mission assumptions are loosely inspired by NASA's reference UAM concept
-vehicles [3].
+vehicles [3]:
+
+![Reference lift+cruise eVTOL concept vehicle](xdsm/evtol_lift+cruise_visual.png)
+
+*(vector version: [xdsm/evtol_lift+cruise_visual.pdf](xdsm/evtol_lift%2Bcruise_visual.pdf))*
 
 ## XDSM diagram
 
-The figure below (also available as [xdsm/evtol_lift+cruise_visual.pdf](xdsm/evtol_lift%2Bcruise_visual.pdf))
-shows the model's Extended Design Structure Matrix (XDSM), i.e. which disciplines exist, what data
-they exchange, and how the optimizer, the internal mass-convergence loop, and the constraints fit
-together.
+The figure below shows the model's Extended Design Structure Matrix (XDSM), i.e. which
+disciplines exist, what data they exchange, and how the optimizer, the internal mass-convergence
+loop, and the constraints fit together.
 
-[![XDSM diagram of the eVTOL lift+cruise MDO model](xdsm/evtol_lift+cruise_visual.pdf)](xdsm/evtol_lift%2Bcruise_visual.pdf)
+![XDSM diagram of the eVTOL lift+cruise MDO model](xdsm/xdsm_evtol_group.png)
 
-*(GitHub does not render PDFs inline — click the figure/link above to open it.)*
+*(vector version: [xdsm/xdsm_evtol_group.pdf](xdsm/xdsm_evtol_group.pdf), source: [xdsm/xdsm.py](xdsm/xdsm.py))*
 
 ### How to read it
 
@@ -73,7 +76,7 @@ src/
     optimizer/
         eVTOL_group.py       # the OpenMDAO Group that wires all disciplines together
         components/          # one OpenMDAO Component per discipline (wraps the src/models/ math)
-xdsm/                    # XDSM diagram source (xdsm.py) and rendered figure
+xdsm/                    # XDSM diagram source (xdsm.py) and rendered figures (.pdf + .png)
 requirements.txt          # Python dependencies
 ```
 
@@ -82,6 +85,10 @@ JAX-based, for automatic differentiation), and a thin OpenMDAO wrapper in
 `src/optimizer/components/` that exposes them as an OpenMDAO `Component` with inputs, outputs, and
 partial derivatives. `src/optimizer/eVTOL_group.py` assembles all components into one `Group` and
 sets up the Newton solver used to converge the MTOM loop shown in the XDSM diagram.
+
+Running `python xdsm/xdsm.py` regenerates `xdsm/xdsm_evtol_group.pdf` from the current model
+structure; re-run `pdftoppm -png -r 200 xdsm_evtol_group.pdf xdsm_evtol_group -singlefile` (inside
+`xdsm/`) afterwards to refresh the PNG used in this README.
 
 ## Dependencies and installation
 
