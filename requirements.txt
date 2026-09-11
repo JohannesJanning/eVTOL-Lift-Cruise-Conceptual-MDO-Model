@@ -1,0 +1,12 @@
+# Core MDO framework
+openmdao>=3.30
+
+# Numerics / automatic differentiation
+numpy>=1.21
+jax>=0.4
+jaxlib>=0.4
+scipy>=1.10
+
+# Optional: only needed to regenerate the XDSM diagram in xdsm/xdsm.py
+# (also requires a local LaTeX installation, e.g. TeX Live / MacTeX, for the PDF build step)
+pyxdsm>=2.3
