@@ -2,11 +2,14 @@
 
 ## Context: Urban Air Mobility
 
-Urban Air Mobility (UAM) and Advanced Air Mobility (AAM) describe an emerging class of electric,
-largely autonomous aircraft intended to move people and cargo over short-to-medium distances in
-and around cities, complementing existing ground transport [[1]](#ref-1). Electric Vertical
-Take-Off and Landing (eVTOL) aircraft are the most prominent vehicle concept in this space,
-combining helicopter-like vertical flight with the efficiency of fixed-wing cruise.
+Urban Air Mobility (UAM), as part of the broader Advanced Air Mobility (AAM) ecosystem, envisions a
+"safe, sustainable, affordable, and accessible air transportation system for passenger mobility,
+goods delivery, and emergency services" within metropolitan areas [[6]](#ref-6). It is enabled by
+an emerging class of electric, largely autonomous aircraft intended to move people and cargo over
+short-to-medium distances in and around cities, complementing existing ground transport
+[[1]](#ref-1). Electric Vertical Take-Off and Landing (eVTOL) aircraft are the most prominent
+vehicle concept in this space, combining helicopter-like vertical flight with the efficiency of
+fixed-wing cruise.
 
 ## What this repository is
 
@@ -32,7 +35,6 @@ vehicles [[3]](#ref-3):
 *Figure 1: Simplified illustration of a lift+cruise eVTOL for UAM, based on NASA's reference
 vehicles [[3]](#ref-3).*
 
-*(vector version: [xdsm/evtol_lift+cruise_visual.pdf](xdsm/evtol_lift%2Bcruise_visual.pdf))*
 
 ## XDSM diagram
 
@@ -45,7 +47,6 @@ mass-convergence loop, and the constraints fit together.
 *Figure 2: XDSM of the eVTOL lift+cruise MDO model, showing the optimizer, the coupled
 mass-convergence (MDA) loop, and all downstream disciplines.*
 
-*(vector version: [xdsm/xdsm_evtol_group.pdf](xdsm/xdsm_evtol_group.pdf), source: [xdsm/xdsm.py](xdsm/xdsm.py))*
 
 ### How to read it
 
@@ -150,6 +151,10 @@ Processes*. Structural and Multidisciplinary Optimization.
 <a id="ref-5"></a>[5] Janning, J., Armanini, S. F., & Fasel, U. (2024). *Future Pathways for
 eVTOLs: A Design Optimization Perspective*.
 [arXiv:2412.18078 [eess.SY]](https://doi.org/10.48550/arXiv.2412.18078)
+
+<a id="ref-6"></a>[6] Cohen, A. P., Shaheen, S. A., & Farrar, E. M. (2021). *Urban Air Mobility:
+History, Ecosystem, Market Potential, and Challenges*. IEEE Transactions on Intelligent
+Transportation Systems, 22(9), 6074–6087.
 
 ## Citing this repository
 
