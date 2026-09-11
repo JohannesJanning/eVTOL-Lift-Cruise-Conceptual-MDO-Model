@@ -4,14 +4,14 @@
 
 Urban Air Mobility (UAM) and Advanced Air Mobility (AAM) describe an emerging class of electric,
 largely autonomous aircraft intended to move people and cargo over short-to-medium distances in
-and around cities, complementing existing ground transport [1]. Electric Vertical Take-Off and
-Landing (eVTOL) aircraft are the most prominent vehicle concept in this space, combining
-helicopter-like vertical flight with the efficiency of fixed-wing cruise.
+and around cities, complementing existing ground transport [[1]](#ref-1). Electric Vertical
+Take-Off and Landing (eVTOL) aircraft are the most prominent vehicle concept in this space,
+combining helicopter-like vertical flight with the efficiency of fixed-wing cruise.
 
 ## What this repository is
 
 This repository is an [OpenMDAO](https://openmdao.org/)-based model for the **Multidisciplinary
-Design Optimization (MDO)** [2] of a **lift+cruise eVTOL** aircraft. "Lift+cruise" refers to a
+Design Optimization (MDO)** [[2]](#ref-2) of a **lift+cruise eVTOL** aircraft. "Lift+cruise" refers to a
 configuration that uses a dedicated set of vertical (hover) rotors for take-off and landing, and a
 separate horizontal propeller and fixed wing for efficient forward flight.
 
@@ -25,7 +25,7 @@ and the code is intentionally kept simple enough to read end-to-end, modify, and
 own experiments (new disciplines, different vehicle configurations, alternative objectives, etc.).
 
 Vehicle sizing and mission assumptions are loosely inspired by NASA's reference UAM concept
-vehicles [3]:
+vehicles [[3]](#ref-3):
 
 ![Reference lift+cruise eVTOL concept vehicle](xdsm/evtol_lift+cruise_visual.png)
 
@@ -33,9 +33,9 @@ vehicles [3]:
 
 ## XDSM diagram
 
-The figure below shows the model's Extended Design Structure Matrix (XDSM), i.e. which
-disciplines exist, what data they exchange, and how the optimizer, the internal mass-convergence
-loop, and the constraints fit together.
+The figure below shows the model's Extended Design Structure Matrix (XDSM) [[4]](#ref-4), i.e.
+which disciplines exist, what data they exchange, and how the optimizer, the internal
+mass-convergence loop, and the constraints fit together.
 
 ![XDSM diagram of the eVTOL lift+cruise MDO model](xdsm/xdsm_evtol_group.png)
 
@@ -60,8 +60,7 @@ loop, and the constraints fit together.
 - The default optimization objective is minimizing the estimated take-off mass (`MTOM_est`),
   subject to the constraints described above.
 
-The overall model architecture builds on earlier work by Janning et al. (see
-[Model provenance and citation](#model-provenance-and-citation) below).
+The overall model architecture builds on earlier work by Janning et al. [[5]](#ref-5).
 
 ## Repository structure
 
@@ -126,20 +125,30 @@ assumptions), or add/modify a discipline component in `src/optimizer/components/
 
 ## References
 
-[1] Raza, W., Renkhoff, J., Ogirimah, O., Bawa, G. K., & Stansbury, R. S. (2025). *Advanced Air
-Mobility: Innovations, Applications, Challenges, and Future Potential*. Published online 20 Jan
-2025. https://doi.org/10.2514/1.D0440
+<a id="ref-1"></a>[1] Raza, W., Renkhoff, J., Ogirimah, O., Bawa, G. K., & Stansbury, R. S. (2025).
+*Advanced Air Mobility: Innovations, Applications, Challenges, and Future Potential*. Published
+online 20 Jan 2025. [https://doi.org/10.2514/1.D0440](https://doi.org/10.2514/1.D0440)
 
-[2] Martins, J. R. R. A., & Lambe, A. B. (2013). *Multidisciplinary Design Optimization: A Survey
-of Architectures*. AIAA Journal. https://doi.org/10.2514/1.J051895
+<a id="ref-2"></a>[2] Martins, J. R. R. A., & Lambe, A. B. (2013). *Multidisciplinary Design
+Optimization: A Survey of Architectures*. AIAA Journal.
+[https://doi.org/10.2514/1.J051895](https://doi.org/10.2514/1.J051895)
 
-[3] NASA Advanced Air Mobility Reference Vehicles. https://www.nasa.gov/reference/uam-refs/
+<a id="ref-3"></a>[3] NASA Advanced Air Mobility Reference Vehicles.
+[https://www.nasa.gov/reference/uam-refs/](https://www.nasa.gov/reference/uam-refs/)
 
-## Model provenance and citation
+<a id="ref-4"></a>[4] Lambe, A. B., & Martins, J. R. R. A. (2012). *Extensions to the Design
+Structure Matrix for the Description of Multidisciplinary Design, Analysis, and Optimization
+Processes*. Structural and Multidisciplinary Optimization.
+[https://doi.org/10.1007/s00158-012-0763-y](https://doi.org/10.1007/s00158-012-0763-y)
 
-The underlying eVTOL multidisciplinary design model builds on:
+<a id="ref-5"></a>[5] Janning, J., Armanini, S. F., & Fasel, U. (2024). *Future Pathways for
+eVTOLs: A Design Optimization Perspective*.
+[arXiv:2412.18078 [eess.SY]](https://doi.org/10.48550/arXiv.2412.18078)
 
-> **Janning, J., Armanini, S. F., & Fasel, U. (2024).** [Future Pathways for eVTOLs: A Design Optimization Perspective](https://doi.org/10.48550/arXiv.2412.18078). *arXiv:2412.18078 [eess.SY]*.
+## Citing this repository
 
-If you use this research code, please cite the repository using GitHub's **Cite this repository** function and the underlying model paper above. A software DOI can be added after archiving a stable release.
+The underlying eVTOL multidisciplinary design model builds on Janning et al. (2024) [[5]](#ref-5)
+above. If you use this research code, please cite the repository using GitHub's
+**Cite this repository** function and the underlying model paper [[5]](#ref-5). A software DOI
+can be added after archiving a stable release.
 
